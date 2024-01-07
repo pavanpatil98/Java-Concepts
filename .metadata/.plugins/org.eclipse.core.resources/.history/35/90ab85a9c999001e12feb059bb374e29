@@ -1,0 +1,43 @@
+package PC;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class TQueue{
+	
+	Queue<Integer> q = new LinkedList<>();
+	int capacity;
+	public TQueue(int capacity) {
+		this.capacity = capacity;
+	}
+	public void add(int element) {
+		if(q.size()== capacity){
+			System.out.println("Queue is full");
+			return;
+		}
+		else {
+			q.add(element);
+		}
+	}
+	public void remove(){
+		if(q.size()== 0) {
+			System.out.println("Queue is empty");
+			return;
+		}
+		else{
+			q.remove();
+		}
+	}
+	
+	public void print() {
+		for(int ele:q) {
+			System.out.println(ele+" ");
+		}
+	}
+}
+
+public class Producer_Consumer_Problem {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,10 @@
+
+//Creates a subclass with new implementation for give method
+class Animal{
+	public void print() {
+		System.out.println("This is animal for you!");
+	}
+}
+public class Anonymous_Inner_Class {
+
+}

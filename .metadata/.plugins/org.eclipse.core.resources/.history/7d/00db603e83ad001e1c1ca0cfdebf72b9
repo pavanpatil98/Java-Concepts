@@ -1,0 +1,27 @@
+package pratice;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class TestQ{
+	Queue<Integer> que = new LinkedList<>();
+	int capacity;
+	public TestQ(int cap) {
+		this.capacity = cap;
+	}
+	public int getSize() {
+		return que.size();
+	}
+	public void add(int ele) throws InterruptedException {
+		synchronized(que){
+			while(getSize()==capacity) {
+				que.wait();
+			}
+			que.add(ele);
+			que.notifyAll();
+		}
+	}
+}
+public class Testr {
+
+}

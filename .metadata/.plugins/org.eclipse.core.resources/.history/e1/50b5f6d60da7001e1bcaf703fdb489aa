@@ -1,0 +1,20 @@
+
+
+class CustomType<T>{
+	T t;
+	public T getValue() {
+		return this.t;
+	}
+	public void setvalue(T t) {
+		this.t = t;
+	}
+}
+public class Test {
+
+	public static void main(String[] args) {
+		CustomType<Integer> ct = new CustomType<>();
+		
+
+	}
+
+}

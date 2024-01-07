@@ -1,0 +1,23 @@
+package PC;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class TQueue{
+	
+	Queue<Integer> q = new LinkedList<>();
+	int capacity;
+	public TQueue(int capacity) {
+		this.capacity = capacity;
+	}
+	public void add() {
+		if(q.size())
+	}
+	public void remove() {}
+}
+
+public class Producer_Consumer_Problem {
+	public static void main(String[] args) {
+		
+	}
+}

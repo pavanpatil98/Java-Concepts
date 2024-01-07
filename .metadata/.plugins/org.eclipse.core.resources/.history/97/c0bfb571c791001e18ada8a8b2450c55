@@ -1,0 +1,13 @@
+package Threads;
+
+import java.util.ArrayList;
+
+public class Queue {
+	
+	private ArrayList<Integer> queue;
+	
+	public Queue() {
+		this.queue = new LinkedList<>();
+		
+	}
+}

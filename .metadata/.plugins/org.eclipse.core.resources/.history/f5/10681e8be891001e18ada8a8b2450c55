@@ -1,0 +1,21 @@
+package Threads;
+
+public class PC_Problem {
+	public static void main(String[] args) throws InterruptedException {
+		BQueue queue = new BQueue(5);
+		Thread t1 = new Thread(()->{
+			for(int i=0;i<=5;i++) {
+				queue.add(i);
+			}
+		},"thread1");
+		Thread t2 = new Thread(()->{
+			for(int i=0;i<=5;i++) {
+				queue.add(i);
+			}
+		},"thread2");
+		t1.start();
+		//t2.sleep(1000);
+		t2.start();
+		
+	}
+}

@@ -1,0 +1,25 @@
+
+//Lambdas can only use with interface having only one abstract method such interfaces 
+//are also known as Funtional interfaces
+
+interface Printer{
+	void print();
+}
+
+class Cat implements Printer{
+	public void print() {
+		System.out.println("Meow... Meow...");
+	}
+}
+
+public class Test {
+	public static void print(Printer p) {
+		p.print();
+	}
+	public static void main(String[] args) {
+		Cat cat = new Cat();
+		cat.print();
+		
+		
+	}
+}

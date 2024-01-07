@@ -1,0 +1,17 @@
+package streamApi;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Map_and_Filter {
+	public static void main(String[] args) {
+		List<Integer> list = List.of(1,2,3,4,5,6);
+		//filter to select some of the elements based on boolean condition known as predicate
+		List<Integer> filterList = list.stream().filter(i->i%2==0 && i>2).collect(Collectors.toList());
+		System.out.println(filterList.toString());
+		//map to perform some operation on each & every element
+		List<Integer> mapList = list.stream.map(i->i*=2).collect(Collectors.toList());
+		
+	}
+}

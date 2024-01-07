@@ -1,0 +1,99 @@
+package Generics;
+
+//===================Topic 1.0 Generics (Type Safety Weapon)========================
+class IntegerPrinter{
+	Integer val;
+	public IntegerPrinter(Integer val) {
+		this.val = val;
+	}
+	public  void print() {
+		System.out.println("Value is "+this.val);
+	} 
+}
+class DoublePrinter{
+	Double val;
+	public DoublePrinter(Double val) {
+		this.val = val;
+	}
+	public  void print() {
+		System.out.println("Value is "+this.val);
+	} 
+}
+class StringPrinter{
+	String val;
+	public StringPrinter(String val) {
+		this.val = val;
+	}
+	public  void print() {
+		System.out.println("Value is "+this.val);
+	} 
+}
+//===================Generics========================
+class Printer<T>{
+	T val;
+	public Printer(T val) {
+		this.val = val;
+	}
+	public  void print() {
+		System.out.println("Value is "+this.val);
+	} 
+}
+//===================Topic 2.0 Generics Advancement using extends========================
+class Animal{
+	String name;
+	public void setName(String name) {this.name = name;}
+	public String getName(){return this.name;}
+}
+class Cat extends Animal{
+	String distance;
+	public void setDistance(String distance) {this.distance = distance;}
+	public String getDistance(){return this.distance;}
+}
+class Dog extends Animal{
+	String distance;
+	public void setDistance(String distance) {this.distance = distance;}
+	public String getDistance(){return this.distance;}
+}
+class AnimalPrinter<T extends Animal>{
+	T val;
+	public AnimalPrinter(T val) {
+		this.val = val;
+	}
+	public  void print() {
+		System.out.println("Value is "+this.val.getName());
+	} 
+}
+public class Main {
+
+	public static void main(String[] args) {
+		//*********Topic 1
+		//Issue we have to create separate types to handle printing based on datatype
+		IntegerPrinter ip = new IntegerPrinter(10);
+		ip.print();
+		DoublePrinter dp = new DoublePrinter(10.00);
+		dp.print();
+		StringPrinter sp = new StringPrinter("Pavan");
+		sp.print();
+		
+		//solution use generics 
+		Printer<Integer> pi = new Printer<>(10);
+		pi.print();
+		Printer<Double> pd = new Printer<>(10.00);
+		pd.print();
+		Printer<String> ps = new Printer<>("Pavan");
+		ps.print();
+		//same can be achieve with taking object type but type safety issue is big blocker
+		
+		
+		////*********Topic 2
+		Cat c = new Cat();
+		c.setName("Mani");
+		Dog d = new Dog();
+		c.setName("Rambo");
+		
+		
+		
+
+	}
+
+}

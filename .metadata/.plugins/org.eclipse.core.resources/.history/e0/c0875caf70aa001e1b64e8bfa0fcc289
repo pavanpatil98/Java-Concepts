@@ -1,0 +1,13 @@
+import java.util.PriorityQueue;
+
+class Record implements Comparable<T>{
+	int id;
+	int quality;
+}
+public class Comparable_Comparator {
+	//Comparable Natural Ordering & Comparator Total Ordering
+	//If both are there comparator ordering takes effect
+	public static void main(String[] args) {
+		PriorityQueue<Integer> pq = new PriorityQueue<>();
+	}
+}

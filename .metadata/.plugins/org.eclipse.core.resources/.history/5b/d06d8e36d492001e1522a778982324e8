@@ -1,0 +1,20 @@
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Thread t = new Thread(new Search("test1.txt"));
+	}
+}
+
+class Search implements Runnable{
+	
+	String filename;
+	
+	public Search(String filename) {
+		this.filename = filename;
+	}
+	
+	public void run() {
+		IOUtils.fileSearch(filename);
+	}
+}

@@ -1,0 +1,22 @@
+import java.util.PriorityQueue;
+
+class Record implements Comparable<Record>{
+	int id;
+	int quality;
+	@Override
+	public int compareTo(Record o) {
+		return this.id-o.id;
+	}
+}
+public class Comparable_Comparator {
+	//Comparable Natural Ordering & Comparator Total Ordering
+	//If both are there comparator ordering takes effect
+	public static void main(String[] args) {
+		PriorityQueue<Integer> pq = new PriorityQueue<>();
+		pq.add(10);
+		pq.add(20);
+		pq.add(30);
+		pq.add(40);
+		PriorityQueue<Record> pr = new PriorityQueue<>();
+	}
+}

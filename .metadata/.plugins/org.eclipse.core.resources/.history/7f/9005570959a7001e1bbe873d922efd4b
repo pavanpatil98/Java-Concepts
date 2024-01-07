@@ -1,0 +1,7 @@
+package streamApi;
+
+public class Map_and_Filter {
+	public static void main(String[] args) {
+		//filter to select some of the elements based on boolean condition known as predicate
+	}
+}

@@ -1,0 +1,19 @@
+
+public class Main {
+	public static void main(String[] args) {
+		
+	}
+}
+
+class Search implements Runnable{
+	
+	String filename;
+	
+	public Search(String filename) {
+		this.filename = filename;
+	}
+	
+	public void run() {
+		IOUtils.fileSearch(filename);
+	}
+}

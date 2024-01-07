@@ -1,0 +1,30 @@
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Thread t1 = new Thread(new Search("test1.txt"));
+		Thread t2 = new Thread(new Search("test2.txt"));
+		Thread t3 = new Thread(new Search("test3.txt"));
+		Thread t4 = new Thread(new Search("test4.txt"));
+		
+		t1.start();
+		t2.start();
+		t3.start();
+		t4.start();
+		
+		System.out.println("String occured --> "+IOUtils.getOccurences());
+	}
+}
+
+class Search implements Runnable{
+	
+	String filename;
+	
+	public Search(String filename) {
+		this.filename = filename;
+	}
+	
+	public void run() {
+		IOUtils.fileSearch(filename);
+	}
+}

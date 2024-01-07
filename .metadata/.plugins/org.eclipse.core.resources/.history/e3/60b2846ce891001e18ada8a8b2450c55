@@ -1,0 +1,33 @@
+package Threads;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class BQueue {
+	private Queue<Integer> queue;
+	private int capacity;
+	
+	public BQueue(int cap) {
+		this.queue = new LinkedList<>();
+		this.capacity = cap;
+	}
+	
+	public void add(int ele) {
+		synchronized(queue) {
+			if(queue.size()==capacity) {
+				System.out.println("Queue is full");
+				return;
+			}
+			queue.add(ele);
+		}
+	}
+	public void remove() {
+		synchronized(queue) {
+			if(queue.size()==0) {
+				System.out.println("Queue is empty");
+				return;
+			}
+			queue.remove();
+		}
+	}
+}

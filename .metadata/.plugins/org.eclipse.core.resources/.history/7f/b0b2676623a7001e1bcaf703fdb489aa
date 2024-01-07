@@ -1,0 +1,8 @@
+
+//Lambdas can only use with interface having only one abstract method such interfaces are also known as 
+//labda expressions
+public class Test {
+	public static void main(String[] args) {
+		
+	}
+}

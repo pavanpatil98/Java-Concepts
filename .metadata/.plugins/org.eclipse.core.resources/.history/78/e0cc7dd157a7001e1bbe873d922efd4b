@@ -1,0 +1,21 @@
+package streamApi;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+public class StreamCreation {
+
+	public static void main(String[] args) {
+		List<Integer> arr = List.of(1,2,3,4);
+		
+		//way 1 
+		Stream<Object> emptystream = Stream.empty();
+		
+		String[] names = {"Pavan","Harshal","Test","Prateek","Anmol"};
+		Stream<String> streamString = 
+		//way2
+	
+
+	}
+
+}

@@ -1,0 +1,94 @@
+package streamApi;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import sun.jvm.hotspot.utilities.soql.JSJavaArray;
+class Pair{
+    int start;
+    int end;
+    public Pair(int start,int end){
+        this.start = start;
+        this.end = end;
+    }
+}
+
+class ArrayList_Array_Hacks {
+	
+	
+	public void String_To_CharArray_Normally() {
+		String pp = "pavanpatil";
+		char[] ans = pp.toCharArray();
+	}
+
+	
+	public void String_To_CharArray_Using_Stream() {
+		String pp = "pavanpatil";
+		Character[] chj = pp.chars().mapToObj(x -> (char) x).toArray(Character[]::new);
+	}
+
+	public void ArrayList1D_String_To_Array() {
+		ArrayList<String> arr1DString = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
+		String[] res1DString = arr1DString.stream().map(x -> x).toArray(String[]::new);
+	}
+	public static void ArrayList1D_To_Array() {
+		// Learning 1D Array
+		ArrayList<Integer> arr1D = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+		int[] res1D = arr1D.stream().mapToInt(x -> x).toArray();
+		int[] res_1D = arr1D.stream().mapToInt(Integer::intValue).toArray();
+
+		for (int ele : res1D)
+			System.out.println(ele + "-------------");
+		for (int ele : res_1D)
+			System.out.println(ele + "-------------");
+	}
+	//
+	public void ArrayList_1D_Char_To_Array() {
+		ArrayList<Character> charr1D = new ArrayList<>(Arrays.asList('1', '2', '3', '4', '5'));
+		Character[] ans = charr1D.stream().map(x -> x).toArray(Character[]::new);
+
+		char[] anes = charr1D.stream().map(x -> x.toString()).collect(Collectors.joining()).toCharArray();
+		char[] myCharArray = Arrays.stream(ans).map(ch -> ch.toString()).collect(Collectors.joining()).toCharArray();
+	}
+	
+
+	public void ArrayList1DCustomToArray() {
+		ArrayList<Pair> arrPair = new ArrayList<>();
+		arrPair.add(new Pair(1, 2));
+		arrPair.add(new Pair(3, 4));
+		arrPair.add(new Pair(4, 5));
+
+		Pair[] pairResult = arrPair.stream().map(x -> x).toArray(Pair[]::new);
+		for (Pair p : pairResult) {
+			System.out.println(p.start + "-------------" + p.end);
+		}
+	}
+	
+	public void ArrayList2DToArray() {
+
+    	ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
+    	arr.add(new ArrayList<>(Arrays.asList(10,20,30,40)));
+    	arr.add(new ArrayList<>(Arrays.asList(50,60,70,80)));
+    	arr.add(new ArrayList<>(Arrays.asList(90,20,30,90)));
+    	arr.add(new ArrayList<>(Arrays.asList(10,20,30,40)));
+    	
+    	int[][] result = arr.stream().map(x->x.stream().mapToInt(i->i).toArray()).toArray(int[][] :: new);
+    	for(int[] arrr : result) {
+    		for(int ele : arrr) {
+    			System.out.print(ele+" ");
+    		}
+    		System.out.println();
+    	}
+    
+	}
+
+    public static void main(String[] args) {
+    	ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
+    	arr.add(new ArrayList<>(Arrays.asList(10,20,30,40)));
+    	arr.add(new ArrayList<>(Arrays.asList(50,60,70,80)));
+    	arr.add(new ArrayList<>(Arrays.asList(90,20,30,90)));
+    	arr.add(new ArrayList<>(Arrays.asList(10,20,30,40)));
+    	
+    	
+    }
+}

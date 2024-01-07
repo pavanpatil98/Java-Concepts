@@ -1,0 +1,51 @@
+import java.util.Iterator;
+
+class MyList<T> implements Iterable<T>{
+	T[] items;
+	int index = 0;
+	public MyList(T type) {
+		items = (T[]) new Object[100];
+		index = 0;
+	}
+	public void add(T t) {
+		items[index++]= t;
+	}
+	public T getItemsAtIndex(int index) {
+		return items[index];
+	}
+	@Override
+	public Iterator<T> iterator() {
+		return new MyIterator<T>(this);
+	}
+	
+	private class MyIterator<T> implements Iterator<T>{
+		T[] list;
+		int index;
+		
+		public MyIterator(MyList<T> ml) {
+			this.list = ml.items;
+			this.index =0;
+		}
+		@Override
+		public boolean hasNext() {
+			
+			return index < list.length;
+		}
+
+		@Override
+		public T next() {
+			
+			return list[index++];
+		}
+		
+	}
+	
+}
+public class Test1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

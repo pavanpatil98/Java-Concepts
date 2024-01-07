@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Threads.Queue&apos; to &apos;BQueue&apos;&#x0D;&#x0A;- Original project: &apos;Basics&apos;&#x0D;&#x0A;- Original element: &apos;Threads.Queue&apos;&#x0D;&#x0A;- Renamed element: &apos;Threads.BQueue&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Queue&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Threads{Queue.java[Queue" matchStrategy="1" name="BQueue" qualified="false" references="true" similarDeclarations="false" stamp="1701599628741" textual="false" version="1.0"/>
+</session>

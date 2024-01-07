@@ -1,0 +1,24 @@
+package Threads;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class BQueue {
+	private Queue<Integer> queue;
+	
+	public BQueue() {
+		this.queue = new LinkedList<>();
+		
+	}
+	
+	public void add(int ele) {
+		synchronized(queue) {
+			queue.add(ele);
+		}
+	}
+	public void remove() {
+		synchronized(queue) {
+			queue.remove();
+		}
+	}
+}
